@@ -24,7 +24,7 @@ MongoClient.connect(url).then(result  => {
         return element._id
     }).join(', ');
 
-    console.info('Priting ID with no email but consent is Y: ', idWithNoEmailButConsent);
+    console.info('\nPriting ID with no email but consent is Y: ', idWithNoEmailButConsent);
     result.close();
 });
 }).catch(error => {

@@ -6,7 +6,7 @@ const fs = require('fs');
 
 describe('Automaton and Test Suite', () => {
 
-    test('Verify the data in flat file matches the data in Patients collection.', () => {
+    test('Verify the data in flat file matches the data in Patients collection.',  () => {
         let patientsData = [];
 
         fs.createReadStream('patients.csv')
@@ -19,18 +19,15 @@ describe('Automaton and Test Suite', () => {
                 dbObject.collection("Patients").find({}).toArray((error, resultPatients) => {
                     if (error) throw error;
                     result.close();
-                    expect(resultPatients).toEqual(patientsData);
-                    
+                    expect(resultPatients).toEqual(patientsData); 
                 });
-
-               
             }).catch(error => {
                 throw error;
             });         
         });
     });
 
-    test('Verify Emails were created in Emails Collection for patients who have CONSENT as Y.', () => {
+    test('Verify Emails were created in Emails Collection for patients who have CONSENT as Y.',  () => {
         MongoClient.connect(url).then(result => {
             let dbObject = result.db("challenge");
             let totalEmails = 0;
@@ -47,7 +44,7 @@ describe('Automaton and Test Suite', () => {
 
              result.close();
 
-             expect(totalPatientsTimesFour).toEqual(totalEmails);
+            expect(totalPatientsTimesFour).toEqual(totalEmails);
            
            
         }).catch(error => {

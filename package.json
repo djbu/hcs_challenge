@@ -1,0 +1,23 @@
+{
+  "name": "hcs_challenge",
+  "version": "1.0.0",
+  "description": "HCS Challenge development",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles",
+    "automation": "node printing.js && npm run test"
+  },
+  "keywords": [
+    "challenge"
+  ],
+  "author": "Daniel Becerra",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "mongodb": "^4.5.0"
+  },
+  "devDependencies": {
+    "jest": "^28.0.1",
+    "var_dump": "^1.0.5"
+  }
+}
